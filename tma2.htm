@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./shared/css/main.css" />
+    <title>TMA2</title>
+</head>
+
+<body style="padding:0 10px;">
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">TMA2</a>
+            </div>
+            <div>
+                <ul class="">
+                    <li><a rel="noopener noreferrer" target="_blank" href="http://54.211.215.124/part1/">Part 1</a></li>
+                    <li> <a rel="noopener noreferrer" target="_blank" href="http://54.211.215.124/part2/">Part 2</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="center">
+        <h1 id="infoHeader">Assignment 2</h1>
+        <table class="info-table">
+            <thead></thead>
+            <tbody style="height:150px;">
+                <tr>
+                    <td>
+                        <b>Course:</b>
+                    </td>
+                    <td>COMP 466</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Assignment:</b>
+                    </td>
+                    <td>TMA2</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Name:</b>
+                    </td>
+                    <td>Alireza Azimi</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Student ID:</b>
+                    </td>
+                    <td>3562060</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Date Began:</b>
+                    </td>
+                    <td>2022-04-21</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Date Completed:</b>
+                    </td>
+                    <td>2022-05-12</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Hours spent:</b>
+                    </td>
+                    <td>91</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <h1>Content</h1>
+    <ul>
+        <li>
+            <a href="#generalGuide">General User Guide</a>
+        </li>
+        <li>
+            <a href="#part1">Part 1</a>
+            <ul>
+                <li>
+                    <a href="#part1-analysis">Analysis</a>
+                </li>
+                <li>
+                    <a href="#part1-design">Design</a>
+                </li>
+                <li>
+                    <a href="#part1-implementation">Implementation</a>
+                </li>
+                <li>
+                    <a href="#part1-userguide">User Guide</a>
+                </li>
+                <li>
+                    <a href="#part1-accesslink">Access Link</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#part2">Part 2</a>
+            <ul>
+                <li>
+                    <a href="#part2-analysis">Analysis</a>
+                </li>
+                <li>
+                    <a href="#part2-design">Design</a>
+                </li>
+                <li>
+                    <a href="#part2-implementation">Implementation</a>
+                </li>
+                <li>
+                    <a href="#part2-userguide">User Guide</a>
+                </li>
+                <li>
+                    <a href="#part2-accesslink">Access Link</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <h1 id="generalGuide">General User Guide</h1>
+    <p>
+        It is required that you have <a href="https://www.apachefriends.org/index.html">XAMPP</a> installed on your
+        system to run the project locally.
+        Once installed locate the htdocs/ folder within XAMPP and copy the contents of the project to the root of that
+        folder.
+        Then you can access each part using: <br>
+        <a rel="noopener noreferrer" target="_blank" href="http://localhost/part1/">Local Part 1</a><br />
+        <a rel="noopener noreferrer" target="_blank" href="http://localhost/part2/">Local Part 2</a><br />
+        Furthermore you need to create two databases called "bookmarks_db" and "istudy_db". Then import their
+        corrosponding schemas provided in shared/sql/ directory of the project.
+
+        For convenience the project has been deployed to the cloud and you can access it from there:<br>
+        <a rel="noopener noreferrer" target="_blank" href="http://54.211.215.124/part1/">Part 1</a><br />
+        <a rel="noopener noreferrer" target="_blank" href="http://54.211.215.124/part2/">Part 2</a><br />
+        I recommend using the latest version of Chrome since that is the browser I used to test my functionalities and
+        user interface.
+    </p>
+    <hr>
+    <h1 id="part1">Part 1: BookMarks</h1>
+    <h3>Description</h3>
+    <p>
+        In this part we were required to implement a multitier service capable of storing bookmark information for each
+        user.
+        This was also accompanied by deploying the application so it can be accessed remotely.
+    </p>
+    <h3 id="part1-analysis">Analysis</h3>
+    <p>
+        Here's a break down and analysis of the project requirements: <br>
+    </p>
+    <ul>
+        <li>
+            The web application should have a good thoughtful interface, with menus and/or navigation buttons:
+            <ul>
+                <li>
+                    Add top navigation bar.
+                </li>
+                <li>
+                    Have a well designed css
+                </li>
+                <li>
+                    Incorporate a color pallette into css
+                </li>
+            </ul>
+        </li>
+        <li>
+            It should have a name or logo shown across all the pages:
+            <ul>
+                <li>
+                    Include name in navbar to be shown across pages.
+                </li>
+                <li>
+                    Create logo for each application.
+                </li>
+            </ul>
+        </li>
+        <li>
+            It should begin with a welcome or greeting message and a list of ten most popular websites that users of the
+            web application have bookmarked:
+            <ul>
+                <li>
+                    Create greeting message.
+                </li>
+                <li>
+                    Store bookmark count for each url in database
+                </li>
+                <li>
+                    Retrieve top 10 boomark counts from database
+                </li>
+                <li>
+                    Display top 10 bookmarks using html table
+                </li>
+            </ul>
+        </li>
+        <li>
+            Once signed in, a list of bookmarks the user has made should be displayed, and the user can browse any web
+            site in the list in a new browser tab or window by clicking a link to the site:
+            <ul>
+                <li>
+                    Create database table that associates users with a table of bookmarks.
+                </li>
+                <li>
+                    Retrieve data for user bookmakrs.
+                </li>
+                <li>
+                    Display data in html table.
+                </li>
+                <li>
+                    Embed bookmark urls in anchor tag and configure it to open in new page.
+                </li>
+            </ul>
+        </li>
+        <li>
+            Once signed in, a list of bookmarks the user has made should be displayed, and the user can browse any web
+            site in the list in a new browser tab or window by clicking a link to the site:
+            <ul>
+                <li>
+                    Create database table that associates users with a table of bookmarks.
+                </li>
+                <li>
+                    Retrieve data for user bookmakrs.
+                </li>
+                <li>
+                    Display data in html table.
+                </li>
+                <li>
+                    Embed bookmark urls in anchor tag and configure it to open in new page.
+                </li>
+            </ul>
+        </li>
+        <li>
+            The user can add new websites to the list and edit and delete any of the existing ones in the list:
+            <ul>
+                <li>
+                    Add form to handle user input for bookmark url
+                </li>
+                <li>
+                    Create API Endpoint to receive bookmakr data
+                </li>
+                <li>
+                    Write query to insert data into database
+                </li>
+                <li>
+                    Refresh user bookmarks table
+                </li>
+            </ul>
+        </li>
+        <li>
+            When adding or editing, user input needs to be validated using JavaScript, to make sure the URLs are not
+            only correct but also active:
+            <ul>
+                <li>
+                    Use Regex to validate URL
+                </li>
+                <li>
+                    Use http request to ensure URL is active
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3 id="part1-design">Design</h3>
+    <p>
+        Since this is a multitier application, it contains a database. The first stage of my design was to model the
+        data using an ER diagram.
+    </p>
+    <div class="figure">
+        <img src="./shared/images/part1/ER-diagram.png" alt="er-diagram-bookmarks">
+        <span>Fig1: Entity Relation Model for BookMarks</span>
+    </div>
+    <p>
+        Next step is to make a relational schema according to the ER diagram (also provided in a .sql file in
+        bookmarks_db.sql under shared/sql/).
+
+    </p>
+    <div class="figure">
+        <img src="./shared/images/part1/schema.png" alt="er-diagram-bookmarks">
+        <span>Fig2: Relational Schema for BookMarks</span>
+    </div>
+    <p>
+        To get a better understanding of how adding a bookmark would work I created a data flow diagram to illustrate
+        this.
+
+    </p>
+    <div class="figure">
+        <img src="./shared/images/part1/dfd-part1.png" alt="er-diagram-bookmarks">
+        <span>Fig3: Data flow diagram for adding bookmark</span>
+    </div>
+
+    Also I wanted to touch on the various modules and models this application has and how they correspond. All the API
+    endpoints (e.g. signin.php, upload.php, enroll.php, etc.) Depend
+    on the Database class provided in the config/ directory in each part. All the endpoints corrosponding to user data
+    (signin.php, signout.php, signup.php, updatepass.php and updateuname.php)
+    Depend on the User model classs. The bookmarks api endpoints all depend on the database class and BookMark model
+    class.
+
+    <p>
+        Lastly, I designed a wireframe to illustrate the user interface design.
+    </p>
+    <div class="figure">
+        <img src="./shared/images/part1/wireframe-part1.png" alt="er-diagram-bookmarks">
+        <span>Fig4: Data flow diagram for adding bookmark</span>
+    </div>
+    <p>
+        All pages will be contained between a navbar and a footer.
+    </p>
+
+    <h3 id="part1-implementation">Implementation</h3>
+    <p>
+        As previously mentioned this application is multitier hence it requires a database, a server and a client. The
+        server and client scripts were implemented usign php, while the database was in mysql.<br>
+        To make the front end interact with the backend and to add data to the data base APIs were created.
+        The following is the list of implemented API endpoints.
+    </p>
+    <br>
+    <br>
+    <b>For BookMarks:</b><br />
+
+    <ul>
+        <li>
+            api/
+            <ul>
+                <li>
+                    bookmarks/
+                    <ul>
+                        <li>
+                            addbookmark.php # for adding a new bookmark
+                        </li>
+                        <li>
+                            editbookmark.php # for editting a bookmark
+                        </li>
+                        <li>
+                            popular.php # for getting top 10 bookmarks
+                        </li>
+                        <li>
+                            removebookmark.php # for removing a bookmark
+                        </li>
+                        <li>
+                            userbookmark.php # for getting current user's bookmark
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    user/
+                    <ul>
+                        <li>
+                            signin.php # for signing in
+                        </li>
+                        <li>
+                            signout.php # for signing out
+                        </li>
+                        <li>
+                            signup.php # for signing up
+                        </li>
+                        <li>
+                            updatepass.php # for changing password
+                        </li>
+                        <li>
+                            updateuname.php # for changing username
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+
+
+    <p>
+        Accompanying these end points are appropriate model classes implemented in php. These classes were designed to
+        handle database queries.
+        You can find the implementation pertaining to these classes under the models/ directory of each part. <br>
+        For error handling a healthy amount of try-catch blocks were incorporated to wrap aroundg high risk blocks of
+        code,
+        such as database connection. Along with this the header values
+
+    </p>
+
+
+
+    <h3 id="part1-userguide">User Guide</h3>
+    <p>
+        If you are new to the application please register an account first. Then you may proceed to sign in. Once signed
+        in you may add, edit and delete your bookmarks from the "My Bookmarks" tab from the navigation bar.
+        The home page of the app contains the list of top 10 bookmarks and you can view them without sigining in.
+        You may update your profile by going to the profile page from the navigation bar.
+    </p>
+
+    <h3 id="part1-accesslink">Access Link</h3>
+    <p>
+        To access the app via the cloud <a rel="noopener noreferrer" target="_blank"
+            href="http://54.211.215.124/part1/">Click here.</a>
+    </p>
+    <a href="#infoHeader">Back To Top</a>
+    <hr>
+    <h1 id="part2">Part 2: iStudy</h1>
+    <h3>Description</h3>
+    <p>
+        In this part we were required to implement a multitier service capable of providing online courses. To achieve
+        this a database needed to be designed
+        to store course information and an EML needed to accompany the app along with appropriate APIs to process and
+        serve the EML
+    </p>
+    <h3 id="part2-analysis">Analysis</h3>
+    <p>
+        Here's a break down and analysis of the project requirements: <br>
+    </p>
+    <ul>
+        <li>
+            Create and design and EML for 3 online courses:
+            <ul>
+                <li>
+                    Design EML language
+                </li>
+                <li>
+                    Implement EML using XML
+                </li>
+                <li>
+                    Extend implementation for 3 units
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            Store EML data in database:
+            <ul>
+                <li>
+                    Create database schema with appropriate fields
+                </li>
+                <li>
+                    Parse EML data into fields
+                </li>
+                <li>
+                    insert fields into database
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            Allow user login and registration:
+            <ul>
+                <li>
+                    create database table for users to store username and passwords
+                </li>
+                <li>
+                    Create form to insert user data into database
+                </li>
+                <li>
+                    Create form to validate user data and login users
+                </li>
+            </ul>
+        </li>
+        <li>
+            Present EML data to users:
+            <ul>
+                <li>
+                    Retrieve data from database
+                </li>
+                <li>
+                    Parse data into HTML
+                </li>
+                <li>
+                    Design interface to present data
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <h3 id="part2-design">Design</h3>
+    <p>
+        First I read about the EML concept and constructed my own design or an EML language using the following UML
+        compositional model: <br>
+    <div class="figure">
+        <img src="./shared/images/part2/EML-design.png" alt="eml-design">
+        <span>Fig5: EML composition diagram</span>
+    </div> <br>
+    To put the diagram (Fig5) in layman terms, a unit may be composed of 1 or more topics. A topic may be composed of 1
+    or more
+    subtopics.
+    A unit is composed of a quiz to test learning, a summary to summaries the information. Both a unit and a topic is
+    composed of an introduction to introduce the material to be discussed. A quiz while belonging to a unit is composed
+    of 1 or more questions and each question is composed of 1 or more answers; designed to indicate a multiple choice
+    question. <br>
+    Using the composition diagram I created my EML language accordingly. The following snippets of unique tags are
+    obtained from my provided eml file and each unique tag is accompanied by a comment to illustrate it's purpose.
+    <div class="figure">
+        <img src="./shared/images/part2/eml-snippet-1.png" alt="eml-snippet">
+    </div> <br>
+    <div class="figure">
+        <img src="./shared/images/part2/eml-snippet-2.png" alt="eml-snippet">
+        <span>Fig6: EML snippets</span>
+    </div> <br>
+
+    The following ER diagram was designed to model the data from the EML to be stored in the datbase.
+    <div class="figure">
+        <img src="./shared/images/part2/ER-part2.png" alt="ER-part2">
+        <span>Fig7: Entity Relation model for iStudy </span>
+    </div> <br>
+
+    This ER model is then mapped to the following database schema (Fig8).
+    <div class="figure">
+        <img src="./shared/images/part2/schema-part2.png" alt="schema-part2">
+        <span>Fig8: Relational schema for iStudy </span>
+    </div> <br>
+    The schema shown is also provided as a .sql file under the shared/sql/ directory. <br>
+    To illustrate the EML to database data transfer better I created the following data flow diagram.
+
+    <div class="figure">
+        <img src="./shared/images/part2/eml-dataflow.png" alt="eml-data-flow">
+        <span>Fig9: EML data flow diagram </span>
+    </div> <br>
+    As we can see a single processor, parces the eml and allocates the data into 6 data stores (i.e. tables). The tables
+    were split up for better logical coherance and smaller indexes.
+    Also I wanted to touch on the various modules and models this application has and how they correspond. All the API
+    endpoints (e.g. signin.php, upload.php, enroll.php, etc.) Depend
+    on the Database class provided in the config/ directory in each part. All the endpoints corrosponding to user data
+    (signin.php, signout.php, signup.php, updatepass.php and updateuname.php)
+    Depend on the User model classs. The file upload endpoint relies only on the database class. The course api
+    endpoints have the following dependency structure:
+    <ul>
+        <li>
+            available.php --uses--> Enrollment class, Database clas, Unit class
+
+        </li>
+        <li>
+            enroll.php --uses--> Database class, Enrollment class
+        </li>
+        <li>
+            markQuiz.php --uses--> Database class, Quiz class
+        </li>
+        <li>
+            open.php --uses--> Database class, Enrollment class
+        </li>
+    </ul>
+    The user interface design of this application is done according to the wireframe presented in part1 of the
+    documentation in Fig4. The following is a wireframe for the quiz modal in the application.
+    <div class="figure">
+        <img src="./shared/images/part2/quiz-modal-wireframe.png" alt="quiz-modal-wireframe">
+        <span>Fig10: Quiz modal wireframe </span>
+    </div> <br>
+    Other modals through out the application for both parts (such as sign in and sign up) follow a similar design
+    structure. Thus this wireframe applies to them as well.
+    </p>
+
+
+    <h3 id="part2-implementation">Implementation</h3>
+    <b>For iStudy:</b><br />
+    <ul>
+        The following apis were created to handle the data the transfer of data between the server and client.
+        <li>
+            api/
+            <ul>
+                <li>
+                    course/
+                    <ul>
+                        <li>
+                            available.php # for getting list of available courses
+                        </li>
+                        <li>
+                            enroll.php # for enrolling in a course
+                        </li>
+                        <li>
+                            markquiz.php # for getting quiz mark via correct answers to questions
+                        </li>
+                        <li>
+                            open.php # for opening a course
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    file/
+                    <ul>
+                        <li>
+                            upload.php # for handling EML file uploads
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    user/
+                    <ul>
+                        <li>
+                            signin.php # for signing in
+                        </li>
+                        <li>
+                            signout.php # for signing out
+                        </li>
+                        <li>
+                            signup.php # for signing up
+                        </li>
+                        <li>
+                            updatepass.php # for changing password
+                        </li>
+                        <li>
+                            updateuname.php # for changing username
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        These APIs incorporate model classes from the models/ directory in each part of the project. These models
+        provide different methods for getting from and inserting into the database.
+        To get a complete and consise picture of the model classes and how they are being used in the apis you are
+        invited to look their implementation in their php files.
+        To parse and make the data EML data presentable I created a function called "function parseContent($content)"
+        where $content is a string containing my EML data.
+        I used the following regex patterns to sanitize and convert the data into my desired HTML format:
+        <code>
+            $content = preg_replace('/&lt;paragraph&gt;/', '&lt;p&gt;', $content);
+            $content = preg_replace('/&lt;\/\s?paragraph&gt;/', '&lt;/p&gt;', $content);
+            $content = preg_replace('/&lt;reference url="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"&gt;/', '&lt;a href="$1"&gt;', $content);
+            $content = preg_replace('/&lt;\/\s?reference&gt;/', '&lt;/a&gt;', $content);
+            $content = preg_replace('/&lt;image source="(.+)" description="(.*)"\s?\/&gt;/', '&lt;img src="$1" alt="$2" /&gt;', $content);
+            $content = preg_replace('/&lt;bulletlist&gt;/', '&lt;ul&gt;', $content);
+            $content = preg_replace('/&lt;\/\s?bulletlist&gt;/', '&lt;/ul&gt;', $content);
+            $content = preg_replace('/&lt;item&gt;/', '&lt;li&gt;', $content);
+            $content = preg_replace('/&lt;\/\s?item&gt;/', '&lt;/li&gt;', $content);
+        </code>
+        As you can see I use regex along with the php method "preg_replace()" to replace matching patterns with an
+        appropriate HTML tag. <br />
+        Lastly, the design detail of the application EML has been illustrated in the design section of the report for
+        this part. The XML implemented
+        followed the designed composition diagram and was intended to be database friendly and easily parseable and
+        presentable.
+
+    </ul> <br>
+
+    <h3 id="part2-userguide">User Guide</h3>
+    <p>
+        If you are new to the application please register an account first. Then you may proceed to sign in. Once signed
+        in you may enroll in a course and open a course. You may update your profile and view the list of courses you've
+        enrolled in using the navbar.
+        Withdrawing from a course can only be done by an administrator (directly remove registration from database).
+        To upload an EML tutorial using an XML file you need to do so through the designated API endpoint
+        (/api/file/upload.php). The following
+        figure illustrates an example of this using <a href="https://www.postman.com/">POSTMAN</a>:
+    <div class="figure">
+        <img src="./shared/images/part2/postman-example.png" alt="eml-data-flow">
+        <span>Fig11: Using Postman to upload EML </span>
+    </div> <br>
+    </p>
+
+    <h3 id="part2-accesslink">Access Link</h3>
+    <p>
+        To access the app via the cloud <a rel="noopener noreferrer" target="_blank"
+            href="http://54.211.215.124/part2/">Click here.</a>
+    </p>
+
+    <a href="#infoHeader">Back To Top</a>
+</body>
+
+</html>
